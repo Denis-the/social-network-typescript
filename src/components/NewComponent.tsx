@@ -5,7 +5,7 @@ const defaultProp = {
 };
 type NewComponentProps = typeof defaultProp;
 
-const NewComponent = ({ innerValue }: NewComponentProps) => <p>{innerValue}+</p>;
+const NewComponent = ({ innerValue }: NewComponentProps) => <p>{innerValue}+1111</p>;
 NewComponent.defaultProps = defaultProp;
 
 export default NewComponent;
