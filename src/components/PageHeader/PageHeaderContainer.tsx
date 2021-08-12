@@ -1,8 +1,8 @@
 import React from "react";
-import PageHeader from "./PageHeader";
+import Navbar from "./Navbar";
 
 function PageHeaderCointainer() {
-    return <PageHeader />
+    return <Navbar />
 }
 
 

@@ -1,11 +1,15 @@
 import React from "react";
-import PageHeader from "../components/PageHeader/PageHeader";
+import PageFooterContainer from "../components/PageFooter/PageFooterContainer";
+import PageHeaderContainer from "../components/PageHeader/PageHeaderContainer";
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className="container flex flex-col p-5 min-h-screen bg-blue-100  ">
-      <PageHeader />
-      {children}
+    <div className="bg-white h-full">
+      <div className="container flex flex-col h-full flex-wrap p-3 pt-0 pb-0 min-h-screen">
+        <PageHeaderContainer />
+        <div className="flex-grow">{children}</div>
+        <PageFooterContainer />
+      </div>
     </div>
   );
 }
