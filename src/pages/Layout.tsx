@@ -4,8 +4,8 @@ import PageHeaderContainer from "../components/PageHeader/PageHeaderContainer";
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className="bg-white h-full">
-      <div className="container flex flex-col h-full flex-wrap p-3 pt-0 pb-0 min-h-screen">
+    <div className="bg-secondary h-full">
+      <div className="container flex flex-col h-full flex-wrap sm:p-3 pt-0 pb-0 min-h-screen">
         <PageHeaderContainer />
         <div className="flex-grow">{children}</div>
         <PageFooterContainer />
