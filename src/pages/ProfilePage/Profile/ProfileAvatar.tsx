@@ -3,8 +3,8 @@ import placeholder from "../../../assets/images/user_avatar_placeholder.jpg";
 
 function ProfileAvatar() {
   return (
-    <div className="">
-      <img src={placeholder} className="" alt="avatar" />
+    <div className="flex flex-wrap justify-center">
+      <img src={placeholder} className="max-w-xs" alt="avatar" />
     </div>
   );
 }

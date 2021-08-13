@@ -6,12 +6,12 @@ import ProfileInfo from "./ProfileInfo";
 function Profile() {
   return (
     <div>
-      <div className="flex flex-wrap items-stretch justify-center text-secondary">
-        <BlockWrapper className="md:w-1/3  max-w-xl bg-unset">
+      <div className="flex flex-wrap items-stretch justify-center sm:justify-evenly text-secondary">
+        <BlockWrapper className="bg-unset flex-grow-0 flex-shrink">
           <ProfileAvatar />
         </BlockWrapper>
 
-        <BlockWrapper className="flex-grow max-w-xl p-2">
+        <BlockWrapper className="flex-grow flex-shrink p-2 sm:max-w-lg">
           <ProfileInfo />
         </BlockWrapper>
       </div>

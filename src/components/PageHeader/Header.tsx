@@ -58,7 +58,7 @@ function Header() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-red-500 text-secondary"
+                            ? "bg-accent-500 text-secondary"
                             : "text-secondary hover:text-primary-500 hover:bg-secondary",
                           "px-3 py-2 rounded-sm text-sm font-medium"
                         )}
@@ -88,7 +88,7 @@ function Header() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-white text-primary-400"
+                      ? "bg-accent-500 text-secondary"
                       : "text-white hover:text-primary-400 hover:bg-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}

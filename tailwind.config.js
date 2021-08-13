@@ -9,6 +9,7 @@ module.exports = {
       current: "currentColor",
       primary: colors.blue,
       secondary: colors.white,
+      accent: colors.red,
       black: colors.black,
       blue: colors.blue,
       white: colors.white,
