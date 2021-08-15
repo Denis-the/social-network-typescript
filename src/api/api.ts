@@ -1,22 +1,25 @@
-import axios from "axios";
+import instance from "./config";
+import getQueryString from "./utils";
 
-const instance = axios.create({
-  baseURL: "https://social-network.samuraijs.com/api/1.0/",
-  withCredentials: true,
-  headers: {
-    "API-KEY": "5dcf9479-c8ea-474c-9022-737a5cf485ef",
-  },
-});
+// types
+import { GetQueryStringParams } from "./interface/utils";
+import {
+  GetProfileResponce,
+  GetUsersParams,
+  GetUsersResponce,
+} from "./interface";
 
 const profileAPI = {
-  async getProfileData(userId: number) {
+  getProfile(userId: number): Promise<GetProfileResponce> {
     return instance.get(`profile/${userId}`);
   },
 };
 
 const usersAPI = {
-  async getUsers() {
-    return instance.get("users");
+  getUsers(params: GetUsersParams): Promise<GetUsersResponce> {
+    const qs = getQueryString(params as GetQueryStringParams);
+
+    return instance.get(`users/?${qs}`);
   },
 };
 

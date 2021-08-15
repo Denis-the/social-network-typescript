@@ -1,22 +1,26 @@
+export type Contact = string | null;
+
+export type Photoes = {
+  small: string | null;
+  large: string | null;
+};
+
 export interface ProfileContacts {
-  github: string;
-  vk: string;
-  facebook: string;
-  instagram: string;
-  twitter: string;
-  website: string;
-  youtube: string;
-  mainLink: string;
+  github: Contact;
+  vk: Contact;
+  facebook: Contact;
+  instagram: Contact;
+  twitter: Contact;
+  website: Contact;
+  youtube: Contact;
+  mainLink: Contact;
 }
 
-export interface Profile {
+export interface ProfileDetailed {
   userId: number;
   lookingForAJob: boolean;
   lookingForAJobDescription: string;
   fullName: string;
   contacts: ProfileContacts;
-  photos: {
-    small: string;
-    large: string;
-  };
+  photos: Photoes;
 }
