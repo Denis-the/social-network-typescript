@@ -10,7 +10,7 @@ const instance = axios.create({
 
 const profileAPI = {
   async getProfileData(userId: number) {
-    return instance.get(`profile/${userId}`).then((response) => response.data);
+    return instance.get(`profile/${userId}`);
   },
 };
 

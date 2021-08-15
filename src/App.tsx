@@ -1,19 +1,20 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import Layout from "./pages/Layout";
-import ProfilePageContainer from "./pages/ProfilePage/ProfilePageContainer";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
     <Layout>
-      <ProfilePageContainer />
+      <Routes />
     </Layout>
   );
 }
 
 const ConnectedApp = () => (
-  <div>
+  <BrowserRouter>
     <App />
-  </div>
+  </BrowserRouter>
 );
 
 export default ConnectedApp;
