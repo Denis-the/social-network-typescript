@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 import { Menu, Transition } from "@headlessui/react";
 import { DropdownMenuProps } from "./interface/DropdownMenu";
@@ -44,15 +45,15 @@ function DropdownMenu({
           {items.map(({ title, to }) => (
             <Menu.Item key={title}>
               {({ active }) => (
-                <a
-                  href={to}
+                <NavLink
+                  to={to}
                   className={classNames(
                     active ? "bg-gray-100" : "",
                     "block px-4 py-2 text-sm text-gray-700"
                   )}
                 >
                   {title}
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
           ))}

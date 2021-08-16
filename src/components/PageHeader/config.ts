@@ -8,6 +8,6 @@ export const headerNavigation = [
 
 export const headerDropdownMenuItems: DropdownMenuItem[] = [
   { to: routes.profile, title: "Your Profile" },
-  { to: routes.profile, title: "Settings" },
+  { to: routes.settings, title: "Settings" },
   { to: routes.login, title: "Sign Out" },
 ];

@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Profile } from "../../types/Profile";
+import { ProfileDetailed } from "../../types/Profile";
 import { $FixTypeLater } from "../../types/utils";
 
 const initialState = {
-  profile: undefined as Profile | undefined,
+  profile: undefined as ProfileDetailed | undefined,
 };
 
 const profileSlice = createSlice({
