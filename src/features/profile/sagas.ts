@@ -11,7 +11,9 @@ export default function* profileSaga() {
   yield takeEvery(fetchProfileStart.type, fetchProfileSaga);
 }
 
-function* fetchProfileSaga(action: ReturnType<typeof fetchProfileStart>) {
+export function* fetchProfileSaga(
+  action: ReturnType<typeof fetchProfileStart>
+) {
   try {
     const profileResponce: GetProfileResponce = yield call(
       api.profileAPI.getProfile,

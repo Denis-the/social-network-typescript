@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import {
   render,
   screen,
@@ -18,11 +19,13 @@ const dropdownItems: DropdownMenuItem[] = [
 
 function DropdownWithTextButton() {
   return (
-    <DropdownMenu
-      items={dropdownItems}
-      buttonName="open button"
-      buttonType="primary"
-    />
+    <BrowserRouter>
+      <DropdownMenu
+        items={dropdownItems}
+        buttonName="open button"
+        buttonType="primary"
+      />
+    </BrowserRouter>
   );
 }
 
