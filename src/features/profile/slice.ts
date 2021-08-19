@@ -12,8 +12,8 @@ const initialState = {
   } as RequestState,
 };
 
-// custom actions
-export const fetchProfileStart = createAction<ProfileDetailed["userId"]>(
+// action creators
+export const fetchProfileStart = createAction<string>(
   "postOrder/postOrderStart"
 );
 

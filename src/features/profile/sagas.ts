@@ -21,6 +21,11 @@ export function* fetchProfileSaga(
     );
     yield put(fetchProfileSucceeded(profileResponce.data));
   } catch (e) {
-    yield put(fetchProfileRejected({ error: e.response.data.error }));
+    yield put(
+      fetchProfileRejected({
+        message: e.response.message,
+        status: e.response.status,
+      })
+    );
   }
 }

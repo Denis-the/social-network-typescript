@@ -10,7 +10,7 @@ import {
 } from "./interface";
 
 const profileAPI = {
-  getProfile(userId: number): Promise<GetProfileResponce> {
+  getProfile(userId: string): Promise<GetProfileResponce> {
     return instance.get(`profile/${userId}`);
   },
 };
@@ -18,7 +18,6 @@ const profileAPI = {
 const usersAPI = {
   getUsers(params: GetUsersParams): Promise<GetUsersResponce> {
     const qs = getQueryString(params as GetQueryStringParams);
-
     return instance.get(`users/?${qs}`);
   },
 };
