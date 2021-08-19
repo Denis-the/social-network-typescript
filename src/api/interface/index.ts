@@ -18,4 +18,8 @@ export interface GetUsersResponceData {
   totalCount: number;
   error: string | null;
 }
+export interface GetStatusResponceData {
+  status: string;
+}
 export type GetUsersResponce = AxiosResponse<GetUsersResponceData>;
+export type GetStatusResponce = AxiosResponse<GetStatusResponceData>;

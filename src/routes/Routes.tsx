@@ -6,6 +6,9 @@ import ProfilePageContainer from "../pages/ProfilePage/ProfilePageContainer";
 function Routes() {
   return (
     <Switch>
+      <Route path={`${routes.profile}/:userId`}>
+        <ProfilePageContainer />
+      </Route>
       <Route path={routes.profile}>
         <ProfilePageContainer />
       </Route>

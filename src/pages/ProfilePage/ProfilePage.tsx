@@ -1,12 +1,10 @@
 import React from "react";
 import Profile from "./Profile/Profile";
 
-function ProfilePage() {
-  return (
-    <div>
-      <Profile />
-    </div>
-  );
+import { ProfilePageProps } from "./interface";
+
+function ProfilePage({ profile }: ProfilePageProps) {
+  return <div>{profile ? <Profile profile={profile} /> : null}</div>;
 }
 
 export default React.memo(ProfilePage);

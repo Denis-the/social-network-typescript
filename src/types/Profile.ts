@@ -18,8 +18,9 @@ export interface ProfileContacts {
 
 export interface ProfileDetailed {
   userId: number;
+  aboutMe: string | null;
   lookingForAJob: boolean;
-  lookingForAJobDescription: string;
+  lookingForAJobDescription: string | null;
   fullName: string;
   contacts: ProfileContacts;
   photos: Photoes;
