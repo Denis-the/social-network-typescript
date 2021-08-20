@@ -1,10 +1,12 @@
-import { takeEvery, call, put } from "redux-saga/effects";
+import { takeEvery, call, put, spawn } from "redux-saga/effects";
 import api from "../../api/api";
-import { GetProfileResponce } from "../../api/interface";
+import { GetProfileResponce, GetStatusResponce } from "../../api/interface";
 import {
   fetchProfileStart,
   fetchProfileSucceeded,
   fetchProfileRejected,
+  fetchStatusRejected,
+  fetchStatusSucceeded,
 } from "./slice";
 
 export default function* profileSaga() {
@@ -15,6 +17,7 @@ export function* fetchProfileSaga(
   action: ReturnType<typeof fetchProfileStart>
 ) {
   try {
+    yield spawn(fetchProfileStatusSaga, action);
     const profileResponce: GetProfileResponce = yield call(
       api.profileAPI.getProfile,
       action.payload
@@ -23,6 +26,25 @@ export function* fetchProfileSaga(
   } catch (e) {
     yield put(
       fetchProfileRejected({
+        message: e.response.message,
+        status: e.response.status,
+      })
+    );
+  }
+}
+
+export function* fetchProfileStatusSaga(
+  action: ReturnType<typeof fetchProfileStart>
+) {
+  try {
+    const statusResponce: GetStatusResponce = yield call(
+      api.profileAPI.getStatus,
+      action.payload
+    );
+    yield put(fetchStatusSucceeded(statusResponce.data));
+  } catch (e) {
+    yield put(
+      fetchStatusRejected({
         message: e.response.message,
         status: e.response.status,
       })

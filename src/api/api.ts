@@ -5,6 +5,7 @@ import getQueryString from "./utils";
 import { GetQueryStringParams } from "./interface/utils";
 import {
   GetProfileResponce,
+  GetStatusResponce,
   GetUsersParams,
   GetUsersResponce,
 } from "./interface";
@@ -12,6 +13,9 @@ import {
 const profileAPI = {
   getProfile(userId: string): Promise<GetProfileResponce> {
     return instance.get(`profile/${userId}`);
+  },
+  getStatus(userId: string): Promise<GetStatusResponce> {
+    return instance.get(`profile/status/${userId}`);
   },
 };
 

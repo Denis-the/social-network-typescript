@@ -6,6 +6,7 @@ import { $FixTypeLater } from "../../types/utils";
 // state
 const initialState = {
   profileData: undefined as ProfileDetailed | undefined,
+  profileStatus: null as string | null,
   request: {
     status: RequestStatus.idle,
     error: undefined,
@@ -34,6 +35,18 @@ const profileSlice = createSlice({
         message: action.payload.message,
       };
     },
+    fetchStatusSucceeded(state, action: PayloadAction<string | null>) {
+      state.profileStatus = action.payload;
+      state.request.status = RequestStatus.succeeded;
+    },
+    fetchStatusRejected(state, action: PayloadAction<$FixTypeLater>) {
+      state.profileStatus = null;
+      state.request.status = RequestStatus.error;
+      state.request.error = {
+        code: action.payload.status,
+        message: action.payload.message,
+      };
+    },
   },
   extraReducers(builder) {
     builder.addCase(fetchProfileStart.type, (state) => {
@@ -42,6 +55,10 @@ const profileSlice = createSlice({
   },
 });
 
-export const { fetchProfileSucceeded, fetchProfileRejected } =
-  profileSlice.actions;
+export const {
+  fetchProfileSucceeded,
+  fetchProfileRejected,
+  fetchStatusRejected,
+  fetchStatusSucceeded,
+} = profileSlice.actions;
 export default profileSlice.reducer;
