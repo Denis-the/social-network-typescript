@@ -10,12 +10,13 @@ function ProfilePageCointainer() {
   const dispatch = useTDispatch();
   const { userId } = useParams<{ userId: string }>();
   const profile = useSelector(profileSelectors.getProfileData);
+  const profileStatus = useSelector(profileSelectors.getProfileStatus);
 
   useEffect(() => {
     dispatch(fetchProfileStart(userId));
   }, [userId]);
 
-  return <ProfilePage profile={profile} />;
+  return <ProfilePage profile={profile} status={profileStatus} />;
 }
 
 export default React.memo(ProfilePageCointainer);

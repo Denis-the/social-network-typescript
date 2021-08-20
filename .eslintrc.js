@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     "no-param-reassign": "off",
     "no-shadow": "off",
+    "no-debugger": "warn",
     "@typescript-eslint/no-shadow": "error",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",

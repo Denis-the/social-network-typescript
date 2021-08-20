@@ -5,7 +5,7 @@ import ProfileInfo from "./ProfileInfo";
 
 import { ProfileProps } from "../interface";
 
-function Profile({ profile }: ProfileProps) {
+function Profile({ profile, status }: ProfileProps) {
   return (
     <div>
       <div className="flex flex-wrap items-stretch justify-center sm:justify-evenly text-secondary">
@@ -14,7 +14,7 @@ function Profile({ profile }: ProfileProps) {
         </BlockWrapper>
 
         <BlockWrapper className="flex-grow flex-shrink p-2 sm:max-w-lg">
-          <ProfileInfo profile={profile} />
+          <ProfileInfo profile={profile} status={status} />
         </BlockWrapper>
       </div>
     </div>

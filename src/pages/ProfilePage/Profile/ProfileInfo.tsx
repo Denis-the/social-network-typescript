@@ -1,7 +1,8 @@
 import React from "react";
 import { ProfileInfoProps } from "../interface";
+import ProfileStatus from "./ProfileStatus";
 
-function ProfileInfo({ profile }: ProfileInfoProps) {
+function ProfileInfo({ profile, status }: ProfileInfoProps) {
   const { fullName, aboutMe, lookingForAJob, lookingForAJobDescription } =
     profile;
   return (
@@ -9,10 +10,7 @@ function ProfileInfo({ profile }: ProfileInfoProps) {
       <div className="m-2 my-3 text-secondary font-bold text-xl uppercase">
         {fullName}
       </div>
-      <div>
-        Status... Wake the f*** up Samurai, we have a city to burn asd asd asd
-        asd as dasd asda sdasd a
-      </div>
+      <ProfileStatus status={status} />
       {aboutMe ? <div>{aboutMe}</div> : null}
       {lookingForAJob ? <div>{lookingForAJobDescription}</div> : null}
     </div>

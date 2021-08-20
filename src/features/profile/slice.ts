@@ -5,7 +5,7 @@ import { $FixTypeLater } from "../../types/utils";
 
 // state
 const initialState = {
-  profileData: undefined as ProfileDetailed | undefined,
+  profileData: null as ProfileDetailed | null,
   profileStatus: null as string | null,
   request: {
     status: RequestStatus.idle,
@@ -28,7 +28,7 @@ const profileSlice = createSlice({
       state.request.status = RequestStatus.succeeded;
     },
     fetchProfileRejected(state, action: PayloadAction<$FixTypeLater>) {
-      state.profileData = undefined;
+      state.profileData = null;
       state.request.status = RequestStatus.error;
       state.request.error = {
         code: action.payload.status,
