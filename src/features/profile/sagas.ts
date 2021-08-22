@@ -1,6 +1,6 @@
 import { takeEvery, call, put, spawn } from "redux-saga/effects";
 import api from "../../api/api";
-import { GetProfileResponce, GetStatusResponce } from "../../api/interface";
+import { GetProfileResponse, GetStatusResponse } from "../../api/interface";
 import {
   fetchProfileStart,
   fetchProfileSucceeded,
@@ -18,7 +18,7 @@ export function* fetchProfileSaga(
 ) {
   try {
     yield spawn(fetchProfileStatusSaga, action);
-    const profileResponce: GetProfileResponce = yield call(
+    const profileResponce: GetProfileResponse = yield call(
       api.profileAPI.getProfile,
       action.payload
     );
@@ -37,7 +37,7 @@ export function* fetchProfileStatusSaga(
   action: ReturnType<typeof fetchProfileStart>
 ) {
   try {
-    const statusResponce: GetStatusResponce = yield call(
+    const statusResponce: GetStatusResponse = yield call(
       api.profileAPI.getStatus,
       action.payload
     );
